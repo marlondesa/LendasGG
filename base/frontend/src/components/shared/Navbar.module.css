@@ -101,3 +101,21 @@
 .loginBtn:hover {
   background: var(--gold-hover);
 }
+
+.themeBtn {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-right: 8px;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.themeBtn:hover {
+  color: var(--text);
+  background: var(--bg-card);
+  border-color: var(--text-muted);
+}
+

@@ -3,18 +3,18 @@
   margin-bottom: 8px;
   overflow: hidden;
   border-left: 5px solid transparent;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-left-width: 5px;
 }
 
 .wrapperWin {
   border-left-color: #5383e8;
-  background: #f5f8ff;
+  background: var(--match-win-bg);
 }
 
 .wrapperLoss {
   border-left-color: #e84057;
-  background: #fff5f6;
+  background: var(--match-loss-bg);
 }
 
 .card {
@@ -118,7 +118,7 @@
 
 .champName {
   font-size: 13px;
-  color: #475569;
+  color: var(--text);
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -185,7 +185,7 @@
 
 .statRow {
   font-size: 13px;
-  color: #1e293b;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   gap: 3px;
@@ -193,13 +193,13 @@
 }
 
 .statMuted {
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 .dmgNumber {
   font-weight: 700;
   font-size: 13px;
-  color: #1e293b;
+  color: var(--text);
 }
 
 .controlWard {

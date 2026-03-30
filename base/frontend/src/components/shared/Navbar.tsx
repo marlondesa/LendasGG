@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Trophy, Server, BarChart2, LogOut, User, Swords } from 'lucide-react'
+import { Trophy, Server, BarChart2, LogOut, User, Swords, Sun, Moon } from 'lucide-react'
 import { useAuth } from '../../auth/AuthContext'
 import AuthModal from './AuthModal'
 import styles from './Navbar.module.css'
 
-export default function Navbar() {
+type NavbarProps = {
+  theme: 'light' | 'dark'
+  onToggleTheme: () => void
+}
+
+export default function Navbar({ theme, onToggleTheme }: NavbarProps) {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
   const [showAuth, setShowAuth] = useState(false)
@@ -44,6 +49,11 @@ export default function Navbar() {
         </Link>
 
         <span className={styles.spacer} />
+
+        <button className={styles.themeBtn} onClick={onToggleTheme}>
+          {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />} 
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
 
         {user ? (
           <>
