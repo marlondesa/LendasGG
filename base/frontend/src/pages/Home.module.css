@@ -1,0 +1,27 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 24px;
+  background: var(--bg);
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.searchWrapper {
+  width: 100%;
+  max-width: 680px;
+}

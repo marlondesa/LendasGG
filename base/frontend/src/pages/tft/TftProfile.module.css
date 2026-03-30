@@ -1,0 +1,56 @@
+.container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 3px solid #c89b3c;
+}
+
+.tagLine {
+  color: #a6adc8;
+}
+
+.level {
+  color: #a6adc8;
+}
+
+.rankCard {
+  padding: 16px;
+  background: #313244;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.rankTier {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.rankLp {
+  color: #c89b3c;
+}
+
+.rankStats {
+  font-size: 13px;
+  color: #a6adc8;
+}
+
+.loading {
+  padding: 24px;
+}
+
+.error {
+  padding: 24px;
+  color: #ef4444;
+}

@@ -1,0 +1,31 @@
+.container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.title {
+  margin: 0;
+}
+
+.incidentsTitle {
+  color: #ef4444;
+}
+
+.incidentCard {
+  background: #3a1a1a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.loading {
+  padding: 24px;
+}

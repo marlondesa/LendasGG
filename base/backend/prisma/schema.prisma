@@ -1,0 +1,177 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── ENUMS ────────────────────────────────────────────────────────────────────
+
+enum Role {
+  PLAYER
+  ORGANIZER
+  ADMIN
+}
+
+enum AuthProvider {
+  EMAIL
+  GOOGLE
+}
+
+enum ChampStatus {
+  OPEN
+  CLOSED
+  ONGOING
+  FINISHED
+}
+
+enum RegStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  DISQUALIFIED
+}
+
+enum PayStatus {
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+}
+
+// ─── USER ─────────────────────────────────────────────────────────────────────
+
+model User {
+  id            String       @id @default(uuid())
+  email         String       @unique
+  password      String?
+  username      String       @unique
+  googleId      String?      @unique
+  authProvider  AuthProvider @default(EMAIL)
+  emailVerified Boolean      @default(false)
+  role          Role         @default(PLAYER)
+  createdAt     DateTime     @default(now())
+
+  // perfil
+  avatarUrl     String?
+  bannerUrl     String?
+
+  // redes sociais
+  twitterUrl    String?
+  discordTag    String?
+  twitchUrl     String?
+  youtubeUrl    String?
+
+  // riot — conta vinculada e verificada
+  riotPuuid     String?      @unique
+  riotGameName  String?
+  riotTagLine   String?
+  riotRegion    String?
+  riotVerified  Boolean      @default(false)
+
+  // recuperação de senha
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+
+  // riot — verificação pendente
+  riotPendingPuuid    String?
+  riotPendingGameName String?
+  riotPendingTagLine  String?
+  riotPendingRegion   String?
+  riotVerifyIcon1     Int?
+  riotVerifyIcon2     Int?
+  riotVerifyStep      Int?
+  riotVerifyExpiresAt DateTime?
+  riotVerifyAttempts  Int      @default(0)
+
+  registrations Registration[]
+  payments      Payment[]
+  sessions      Session[]
+}
+
+// ─── RIOT CLAIM BLOCK ─────────────────────────────────────────────────────────
+
+model RiotClaimBlock {
+  id           String    @id @default(uuid())
+  puuid        String    @unique
+  attempts     Int       @default(0)
+  blockedUntil DateTime?
+  blockCount   Int       @default(0)
+  updatedAt    DateTime  @updatedAt
+}
+
+// ─── CHAMPIONSHIP ─────────────────────────────────────────────────────────────
+
+model Championship {
+  id          String      @id @default(uuid())
+  name        String
+  description String?
+  game        String      @default("lol")
+  maxPlayers  Int
+  prizePool   Decimal     @db.Decimal(10, 2)
+  entryFee    Decimal     @db.Decimal(10, 2)
+  status      ChampStatus @default(OPEN)
+  startDate   DateTime
+  endDate     DateTime
+  createdAt   DateTime    @default(now())
+
+  registrations Registration[]
+  matches       Match[]
+}
+
+model Registration {
+  id             String    @id @default(uuid())
+  userId         String
+  championshipId String
+  status         RegStatus @default(PENDING)
+  registeredAt   DateTime  @default(now())
+
+  user         User         @relation(fields: [userId], references: [id])
+  championship Championship @relation(fields: [championshipId], references: [id])
+  payment      Payment?
+
+  @@unique([userId, championshipId])
+}
+
+model Payment {
+  id             String    @id @default(uuid())
+  userId         String
+  registrationId String    @unique
+  amount         Decimal   @db.Decimal(10, 2)
+  currency       String    @default("BRL")
+  provider       String
+  paymentMethod  String?                      // "pix", "boleto", "credit_card"
+  externalId     String?   @unique
+  status         PayStatus @default(PENDING)
+  paidAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  user         User         @relation(fields: [userId], references: [id])
+  registration Registration @relation(fields: [registrationId], references: [id])
+}
+
+model Match {
+  id             String    @id @default(uuid())
+  championshipId String
+  round          Int
+  player1Id      String
+  player2Id      String
+  winnerId       String?
+  riotMatchId    String?
+  scheduledAt    DateTime?
+  playedAt       DateTime?
+
+  championship Championship @relation(fields: [championshipId], references: [id])
+}
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+}

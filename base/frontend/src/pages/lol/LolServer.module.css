@@ -1,0 +1,243 @@
+.container {
+  padding: 16px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Duas seções lado a lado */
+.sectionsRow {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.section {
+  flex: 1;
+  min-width: 0;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 10px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Grade de campeões — sempre 4 colunas */
+.freeChamps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.champCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-card, #1e2030);
+  border: 1px solid var(--border, #2e3248);
+  border-radius: 8px;
+  padding: 7px 4px;
+  transition: transform 0.15s, border-color 0.15s;
+  cursor: default;
+}
+
+.champCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold, #c89b3c);
+}
+
+.champCardNew {
+  border-color: #3b82f680;
+}
+
+.champCardNew:hover {
+  border-color: #60a5fa;
+}
+
+.champIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+.champIconPlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  background: var(--bg-secondary, #2a2d3e);
+}
+
+.champName {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text, #e2e8f0);
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+  width: 100%;
+}
+
+.emptyMsg {
+  color: var(--text-muted);
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.loading {
+  padding: 12px 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+/* ── Clash ── */
+.clashSection {
+  margin-top: 32px;
+}
+
+.clashIcon, .statusIcon {
+  margin-right: 6px;
+}
+
+.clashGrid {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.clashCard {
+  background: var(--bg-card, #1e2030);
+  border: 1px solid var(--border, #2e3248);
+  border-radius: 10px;
+  padding: 14px 18px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.clashTheme {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--gold, #c89b3c);
+}
+
+.clashDay {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.clashRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.clashLabel {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.clashValue {
+  color: var(--text);
+  font-weight: 600;
+  text-align: right;
+}
+
+.clashCancelled {
+  opacity: 0.5;
+}
+
+.clashCancelledBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ef4444;
+  text-transform: uppercase;
+}
+
+/* ── Status do servidor ── */
+.statusSection {
+  margin-top: 32px;
+}
+
+.statusGroup {
+  margin-bottom: 16px;
+}
+
+.statusGroupTitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.statusCard {
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusMaintenance {
+  background: #1e1a2e;
+  border: 1px solid #6d28d9;
+}
+
+.statusIncident {
+  background: #2a1a1a;
+  border: 1px solid #7f1d1d;
+}
+
+.statusCardTitle {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.statusBadge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: #6d28d9;
+  color: #fff;
+}
+
+.badgeSeverity {
+  background: #b91c1c;
+}
+
+.statusDate {
+  width: 100%;
+  font-size: 11px;
+  color: var(--text-muted);
+}

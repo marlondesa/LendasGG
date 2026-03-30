@@ -1,0 +1,50 @@
+.container {
+  padding: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  color: #a6adc8;
+  margin-bottom: 24px;
+}
+
+.team {
+  margin-bottom: 32px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.thead tr {
+  background: #313244;
+  text-align: left;
+}
+
+.th {
+  padding: 8px 10px;
+}
+
+.td {
+  padding: 8px 10px;
+}
+
+.row {
+  border-bottom: 1px solid #313244;
+}
+
+.icon {
+  border-radius: 4px;
+}
+
+.loading {
+  padding: 24px;
+}
+
+.error {
+  padding: 24px;
+  color: #ef4444;
+}

@@ -1,0 +1,29 @@
+.masteryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 90px;
+  text-align: center;
+}
+
+.icon {
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+.championName {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.masteryInfo {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

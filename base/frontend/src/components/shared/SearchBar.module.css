@@ -1,0 +1,102 @@
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  background: var(--bg-input);
+  transition: border-color 0.2s;
+  position: relative;
+}
+
+.form:focus-within {
+  border-color: var(--gold);
+}
+
+.regionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 48px;
+  background: var(--bg-card);
+  border-right: 1.5px solid var(--border);
+}
+
+.regionIcon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.regionSelect {
+  background: transparent;
+  color: var(--text);
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 60px;
+}
+
+.regionSelect:focus {
+  outline: none;
+}
+
+.gameSelect {
+  background: var(--bg-card);
+  color: var(--text);
+  border: none;
+  border-right: 1.5px solid var(--border);
+  padding: 0 12px;
+  height: 48px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.gameSelect:focus {
+  outline: none;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: 0 16px;
+  height: 48px;
+  font-size: 14px;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold);
+  color: #0e0f1a;
+  border: none;
+  padding: 0 20px;
+  height: 48px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.button:hover {
+  background: var(--gold-hover);
+}
+
+.error {
+  position: absolute;
+  margin-top: 52px;
+  font-size: 12px;
+  color: var(--red);
+  padding-left: 4px;
+}

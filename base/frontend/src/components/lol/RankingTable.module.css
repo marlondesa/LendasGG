@@ -1,0 +1,125 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.thead tr {
+  background: var(--bg-secondary);
+  text-align: left;
+}
+
+.th {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.td {
+  padding: 10px 14px;
+  color: var(--text);
+}
+
+.tdRank {
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--text-muted);
+  width: 40px;
+}
+
+.tdLp {
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.tdW {
+  padding: 10px 14px;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.tdL {
+  padding: 10px 14px;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+.row {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+
+.row:hover {
+  background: var(--bg-secondary);
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.avatarPlaceholder {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.playerLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.playerLink:hover .playerName {
+  color: var(--gold);
+}
+
+.playerName {
+  font-weight: 600;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.playerNameMuted {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.tierCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tierEmblem {
+  object-fit: contain;
+}
+
+.winRateGood {
+  padding: 10px 14px;
+  color: #22c55e;
+  font-weight: 700;
+}
+
+.winRateBad {
+  padding: 10px 14px;
+  color: #ef4444;
+  font-weight: 700;
+}

@@ -1,0 +1,33 @@
+.container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.title {
+  margin: 0;
+}
+
+.agentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agentTag {
+  background: #313244;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.loading {
+  padding: 24px;
+}

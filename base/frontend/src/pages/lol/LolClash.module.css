@@ -1,0 +1,50 @@
+.container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: #313244;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.teamName {
+  margin: 0 0 8px;
+}
+
+.teamInfo {
+  color: #a6adc8;
+  margin: 0;
+}
+
+.tournamentCard {
+  background: #313244;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.tournamentName {
+  font-weight: 600;
+}
+
+.tournamentDate {
+  font-size: 13px;
+  color: #a6adc8;
+}
+
+.noTournament {
+  color: #a6adc8;
+}
+
+.loading {
+  padding: 24px;
+}
+
+.noTeam {
+  padding: 24px;
+  color: #a6adc8;
+}

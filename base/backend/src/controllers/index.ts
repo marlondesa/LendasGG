@@ -1,0 +1,5 @@
+export * as lolController from './lol'
+export * as tftController from './tft'
+export * as valorantController from './valorant'
+export * as authController from './auth'
+export * as userController from './user'
